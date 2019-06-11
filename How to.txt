@@ -1,0 +1,20 @@
+dotnet run mvc -o SanookMovie
+dotnet dev-certs https --trust
+dotnet run --port 50002
+dotnet watch run
+
+
+MovieController
+----
+IList<string> _movies = new List<string>();
+        public MovieController()
+        {
+            _movies.Add("AAA");
+            _movies.Add("BBB");
+            _movies.Add("CCC");
+        }
+        public IActionResult Index()
+        {
+            return View(_movies);
+        }
+------

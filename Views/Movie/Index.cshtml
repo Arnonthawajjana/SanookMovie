@@ -1,0 +1,26 @@
+﻿@model IList<Movie>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>Movies</h2>
+<a>
+    <a asp-action="Create">Create New</a>
+</a>
+
+<table>
+    <thead>
+        <th>@Html.DisplayNameFor(m =>m.Title)</th>
+        <th>@Html.DisplayNameFor(m =>m.ReleaseDate)</th>
+        <th>@Html.DisplayNameFor(m =>m.Genre)</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayNameFor(_ => item.Title)</td>
+                <td>@Html.DisplayNameFor(_ => item.ReleaseDate)</td>
+                <td>@Html.DisplayNameFor(_ => item.Genre)</td>
+            </tr>
+        }
+    </tbody>
+</table>
